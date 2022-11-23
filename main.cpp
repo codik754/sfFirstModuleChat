@@ -1,54 +1,68 @@
-#include <iostream>
-#include "User.h"
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
 
-using namespace std;
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+
+#include <iostream>
+#include <memory>
+#include "chat.h"
+#include "user.h"
+
+using std::cout;
+using std::endl;
+using std::cin;
+
+//В этой функции реализуется основной код
+void clientCode() {
+}
+
 
 int main() {
-/*	std::cout << "Welcome!" << std::endl << "Wish you enter?" << std::endl
-		<< "Enter (1) to enter your login and password" << std::endl
-		<< "Or you need to checkin. Enter (2)" << std::endl<<"(0) for Exit"<<std::endl;*/
-	
-	
-		User A("Vasya", "Tatyana", "Text message");
-		cout << A.getLogin() << endl;
-		cout << A.getPassword() << endl;
-		cout << A.getName() << endl;
+	setlocale(LC_ALL, "");
 
-		A.setName("New name");
-		A.setPassword("New password");
+	Chat chat;
+	int menu = 0;//какое меню печатать
+	char choice = '0';
 
-		cout << A.getLogin() << endl;
-		cout << A.getPassword() << endl;
-		cout << A.getName() << endl;
-/*
-		int operation;
-		char userdata;
-		std::cin >> operation;
-
-
-		switch (operation) {
-
-		case 1:
-			std::cout << "Enter your login" << std::endl;
-			std::cin >> userdata;
-			break;
-			
-		case 2:
-			
-			std::cout << "Enter your password" << std::endl;
-			std::cin >> userdata;
-			break;
-
-		case 0:
-			std::cout << "Bye!!!" << std::endl;
-			break;
-
-		default:
-			std::cout << "I don't know!" << std::endl;
+	while (choice != 'q') {
+		if (choice == '0') {
+			choice = chat.showHelloMenu();
 		}
+		else if (choice == '2') {
+			chat.showRegistrationMenu();
+			choice = '0';
+		}
+	}
 
-		*/
+		//system("pause");
+		//system("cls");
+	/*
+			int operation;
+			char userdata;
+			std::cin >> operation;
+
+
+			switch (operation) {
+
+			case 1:
+				std::cout << "Enter your login" << std::endl;
+				std::cin >> userdata;
+				break;
+
+			case 2:
+
+				std::cout << "Enter your password" << std::endl;
+				std::cin >> userdata;
+				break;
+
+			case 0:
+				std::cout << "Bye!!!" << std::endl;
+				break;
+
+			default:
+				std::cout << "I don't know!" << std::endl;
+			}
+
+			*/
 
 	return 0;
-
 }
