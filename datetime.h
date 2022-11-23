@@ -1,12 +1,11 @@
 ﻿//Файл datetime.h
 #pragma once
-
+#include<windows.h>
 #include <string>
 
 using std::string;
-
 class Datetime
-{	
+{
 	int sec_;  //секунды
 	int min_;  //минуты
 	int hour_; //час
@@ -14,6 +13,7 @@ class Datetime
 	int month_;//месяц
 	int year_; //год
 public:
+	
 	//Конструктор по умолчанию
 	Datetime();
 
