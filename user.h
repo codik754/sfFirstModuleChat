@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <string>
 #include <memory>
@@ -9,30 +9,30 @@ using std::shared_ptr;
 
 class User : public IObserver {
 
-	const std::string login_;//поле для логина
-	std::string password_;//поле для пароля
-	std::string name_;//поле для имени
-	unsigned int amountSelfMessags_; //количество личных сообщений
-	unsigned int newSelfMessages_;  //количесвто новых личных сообщений
-	bool isSubribes_; //пользователь подписан на оповещения
-	shared_ptr<IPublisher> publisher_; //указатель на издателя
+	const std::string login_;//РїРѕР»Рµ РґР»СЏ Р»РѕРіРёРЅР°
+	std::string password_;//РїРѕР»Рµ РґР»СЏ РїР°СЂРѕР»СЏ
+	std::string name_;//РїРѕР»Рµ РґР»СЏ РёРјРµРЅРё
+	unsigned int amountSelfMessags_; //РєРѕР»РёС‡РµСЃС‚РІРѕ Р»РёС‡РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№
+	unsigned int newSelfMessages_;  //РєРѕР»РёС‡РµСЃРІС‚Рѕ РЅРѕРІС‹С… Р»РёС‡РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№
+	bool isSubribes_; //РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕРґРїРёСЃР°РЅ РЅР° РѕРїРѕРІРµС‰РµРЅРёСЏ
+	shared_ptr<IPublisher> publisher_; //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РёР·РґР°С‚РµР»СЏ
 
 
 public:
-	//Параметризированный конструктор
+	//РџР°СЂР°РјРµС‚СЂРёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	User(const std::string& login, const std::string& password, const std::string& name, shared_ptr<IPublisher> publisher)
 		: login_(login), password_(password), name_(name), amountSelfMessags_(0), newSelfMessages_(0), isSubribes_(true), publisher_(publisher) {}
 
-	const std::string& getLogin() const;//получить логин
-	const std::string& getName() const;//получить имя
-	const std::string& getPassword() const;//получить пароль
+	const std::string& getLogin() const;//РїРѕР»СѓС‡РёС‚СЊ Р»РѕРіРёРЅ
+	const std::string& getName() const;//РїРѕР»СѓС‡РёС‚СЊ РёРјСЏ
+	const std::string& getPassword() const;//РїРѕР»СѓС‡РёС‚СЊ РїР°СЂРѕР»СЊ
 
-	void setPassword(const std::string& password);//установить пароль
-	void setName(const std::string& name);//установить имя
+	void setPassword(const std::string& password);//СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РїР°СЂРѕР»СЊ
+	void setName(const std::string& name);//СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РёРјСЏ
 
-	virtual ~User() = default;//деструктор класса
+	virtual ~User() = default;//РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
 
-	void updateInformation() override;//обновить информацию полученную от Издателя
+	void updateInformation() override;//РѕР±РЅРѕРІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕР»СѓС‡РµРЅРЅСѓСЋ РѕС‚ РР·РґР°С‚РµР»СЏ
 
 };
 

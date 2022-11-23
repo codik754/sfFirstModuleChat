@@ -1,9 +1,9 @@
-//Файл iobserver.h
+п»ї//Р¤Р°Р№Р» iobserver.h
 #pragma once
 
-//Интерфейс для Наблюдателя
+//РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РќР°Р±Р»СЋРґР°С‚РµР»СЏ
 class IObserver {
 public:
-	virtual ~IObserver() = default; //деструктор класса
-	virtual void updateInformation() = 0;//обновить информацию полученную от Издателя
+	virtual ~IObserver() = default; //РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+	virtual void updateInformation() = 0;//РѕР±РЅРѕРІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕР»СѓС‡РµРЅРЅСѓСЋ РѕС‚ РР·РґР°С‚РµР»СЏ
 };

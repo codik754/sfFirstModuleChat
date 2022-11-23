@@ -1,8 +1,8 @@
-// This is a personal academic project. Dear PVS-Studio, please check it.
+п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
-//Файл datetime.cpp
+//Р¤Р°Р№Р» datetime.cpp
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "datetime.h"
@@ -10,9 +10,9 @@
 #include <ctime>
 #include <sstream>
 
-//Подсветка времени
+//РџРѕРґСЃРІРµС‚РєР° РІСЂРµРјРµРЅРё
 //SetConsoleTextAttribute(hConsole_, 15);
-//Конструктор по умолчанию
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Datetime::Datetime() {
     std::time_t t = std::time(nullptr);
     std::tm* now = localtime(&t);
@@ -26,7 +26,7 @@ Datetime::Datetime() {
 }
 
 
-//Установить текущие время
+//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ С‚РµРєСѓС‰РёРµ РІСЂРµРјСЏ
 void Datetime::setNow() {
     std::time_t t = std::time(nullptr);
     std::tm* now = localtime(&t);
@@ -39,37 +39,37 @@ void Datetime::setNow() {
     year_ = now->tm_year + 1900;
 }
 
-//Получить секунды
+//РџРѕР»СѓС‡РёС‚СЊ СЃРµРєСѓРЅРґС‹
 int Datetime::getSec() const {
     return sec_;
 }
 
-//Получить минуты
+//РџРѕР»СѓС‡РёС‚СЊ РјРёРЅСѓС‚С‹
 int Datetime::getMin() const {
     return min_;
 }
 
-//Получить часы
+//РџРѕР»СѓС‡РёС‚СЊ С‡Р°СЃС‹
 int Datetime::getHour() const {
     return hour_;
 }
 
-//Получить день
+//РџРѕР»СѓС‡РёС‚СЊ РґРµРЅСЊ
 int Datetime::getDay() const {
     return day_;
 }
 
-//Получить месяц
+//РџРѕР»СѓС‡РёС‚СЊ РјРµСЃСЏС†
 int Datetime::getMonth() const {
     return month_;
 }
 
-//Получить год
+//РџРѕР»СѓС‡РёС‚СЊ РіРѕРґ
 int Datetime::getYear() const {
     return year_;
 }
 
-//Получить дату и время в виде строки
+//РџРѕР»СѓС‡РёС‚СЊ РґР°С‚Сѓ Рё РІСЂРµРјСЏ РІ РІРёРґРµ СЃС‚СЂРѕРєРё
 const string Datetime::getStr() const {
     std::ostringstream os;
     os << day_ << "." << month_ << "." << year_ << "  " << hour_ << ":" << min_ << ":" << sec_;

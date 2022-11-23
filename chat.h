@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "ipublisher.h"
 #include <vector>
 #include <list>
@@ -11,29 +11,29 @@ using std::vector;
 using std::list;
 
 class Chat : public IPublisher {
-	vector<User> users_;   //вектор пользователей зарегестрировавшихся в системе
-	vector<Message> message_;//вектор сообщений
-	list<IObserver*> subscribers_; //список подписчиков
-	unsigned int amount_;//общее количество сообщений
-	HANDLE hConsole_;//поле нужно для работы с цветом в консоле Windows
+	vector<User> users_;   //РІРµРєС‚РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РІС€РёС…СЃСЏ РІ СЃРёСЃС‚РµРјРµ
+	vector<Message> message_;//РІРµРєС‚РѕСЂ СЃРѕРѕР±С‰РµРЅРёР№
+	list<IObserver*> subscribers_; //СЃРїРёСЃРѕРє РїРѕРґРїРёСЃС‡РёРєРѕРІ
+	unsigned int amount_;//РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№
+	HANDLE hConsole_;//РїРѕР»Рµ РЅСѓР¶РЅРѕ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ С†РІРµС‚РѕРј РІ РєРѕРЅСЃРѕР»Рµ Windows
 
 public:
-	//Конструктор по умолчанию
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Chat() : users_(), message_(), subscribers_(), amount_(0), hConsole_(GetStdHandle(STD_OUTPUT_HANDLE)) {}
 
-	virtual ~Chat() = default;//деструктор класса
+	virtual ~Chat() = default;//РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
 
-	void attach(IObserver* observer) override; //добавить наблюдателя на подписку
-	void dettach(IObserver* observer) override; //исключить наблюдателя из подписки
-	void notify() override; //разослать информацию
+	void attach(IObserver* observer) override; //РґРѕР±Р°РІРёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РЅР° РїРѕРґРїРёСЃРєСѓ
+	void dettach(IObserver* observer) override; //РёСЃРєР»СЋС‡РёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РёР· РїРѕРґРїРёСЃРєРё
+	void notify() override; //СЂР°Р·РѕСЃР»Р°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ
 
-	unsigned int getAmount() const;//получить общее количество сообщений
+	unsigned int getAmount() const;//РїРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№
 
-	unsigned int getAmountSelfMessage() const;//получить общее количество личных сообщений для пользователя
+	unsigned int getAmountSelfMessage() const;//РїРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р»РёС‡РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
-	char showHelloMenu();//показать первое меню
+	char showHelloMenu();//РїРѕРєР°Р·Р°С‚СЊ РїРµСЂРІРѕРµ РјРµРЅСЋ
 
-	void showRegistrationMenu();//показать меню регистрации
+	void showRegistrationMenu();//РїРѕРєР°Р·Р°С‚СЊ РјРµРЅСЋ СЂРµРіРёСЃС‚СЂР°С†РёРё
 
 
 

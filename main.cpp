@@ -1,4 +1,4 @@
-// This is a personal academic project. Dear PVS-Studio, please check it.
+п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
@@ -11,7 +11,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-//В этой функции реализуется основной код
+//Р’ СЌС‚РѕР№ С„СѓРЅРєС†РёРё СЂРµР°Р»РёР·СѓРµС‚СЃСЏ РѕСЃРЅРѕРІРЅРѕР№ РєРѕРґ
 void clientCode() {
 }
 
@@ -20,7 +20,7 @@ int main() {
 	setlocale(LC_ALL, "");
 
 	Chat chat;
-	int menu = 0;//какое меню печатать
+	int menu = 0;//РєР°РєРѕРµ РјРµРЅСЋ РїРµС‡Р°С‚Р°С‚СЊ
 	char choice = '0';
 
 	while (choice != 'q') {
