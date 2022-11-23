@@ -31,7 +31,7 @@ unsigned int Chat::getAmount() const {
 
 //Показать первое меню
 char Chat::showHelloMenu() {
-   // SetConsoleTextAttribute(hConsole_, 10);
+   SetConsoleTextAttribute(hConsole_, 224);
     char choice = '0';
     while (true) {
         cout << "Добрый день! Добро пожаловать в чат. Что будем делать?" << endl;
@@ -50,7 +50,7 @@ char Chat::showHelloMenu() {
             system("cls");
         }
     }
-   // SetConsoleTextAttribute(hConsole_, 15);
+   SetConsoleTextAttribute(hConsole_, 15);
     system("cls");
     return choice;
 }

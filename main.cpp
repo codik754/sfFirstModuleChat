@@ -27,6 +27,9 @@ int main() {
 		if (choice == '0') {
 			choice = chat.showHelloMenu();
 		}
+		else if (choice == '1') {
+		
+		}
 		else if (choice == '2') {
 			chat.showRegistrationMenu();
 			choice = '0';
