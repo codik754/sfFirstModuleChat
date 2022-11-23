@@ -6,13 +6,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "datetime.h"
+#include "chat.h"
 #include <ctime>
 #include <sstream>
 
+//Подсветка времени
+//SetConsoleTextAttribute(hConsole_, 15);
 //Конструктор по умолчанию
-Datetime::Datetime(){
+Datetime::Datetime() {
     std::time_t t = std::time(nullptr);
-    std::tm *now = localtime(&t);
+    std::tm* now = localtime(&t);
 
     sec_ = now->tm_sec;
     min_ = now->tm_min;
@@ -24,7 +27,7 @@ Datetime::Datetime(){
 
 
 //Установить текущие время
-void Datetime::setNow(){
+void Datetime::setNow() {
     std::time_t t = std::time(nullptr);
     std::tm* now = localtime(&t);
 

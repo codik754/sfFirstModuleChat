@@ -10,7 +10,7 @@
 using std::vector;
 using std::list;
 
-class Chat : public IPublisher{
+class Chat : public IPublisher {
 	vector<User> users_;   //вектор пользователей зарегестрировавшихся в системе
 	vector<Message> message_;//вектор сообщений
 	list<IObserver*> subscribers_; //список подписчиков
@@ -24,7 +24,7 @@ public:
 	virtual ~Chat() = default;//деструктор класса
 
 	void attach(IObserver* observer) override; //добавить наблюдателя на подписку
-	void dettach(IObserver* observer) override; //исключить наблюдателя из подписку
+	void dettach(IObserver* observer) override; //исключить наблюдателя из подписки
 	void notify() override; //разослать информацию
 
 	unsigned int getAmount() const;//получить общее количество сообщений
@@ -32,10 +32,10 @@ public:
 	unsigned int getAmountSelfMessage() const;//получить общее количество личных сообщений для пользователя
 
 	char showHelloMenu();//показать первое меню
-	
-	void showRegistrationMenu();//покащать меню регистрации
 
-	
+	void showRegistrationMenu();//показать меню регистрации
+
+
 
 };
 
