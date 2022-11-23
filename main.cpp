@@ -1,4 +1,4 @@
-ï»¿// This is a personal academic project. Dear PVS-Studio, please check it.
+// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
@@ -11,7 +11,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-//Ğ’ ÑÑ‚Ğ¾Ğ¹ Ñ„ÑƒĞ½ĞºÑ†Ğ¸Ğ¸ Ñ€ĞµĞ°Ğ»Ğ¸Ğ·ÑƒĞµÑ‚ÑÑ Ğ¾ÑĞ½Ğ¾Ğ²Ğ½Ğ¾Ğ¹ ĞºĞ¾Ğ´
+//Â ıòîé ôóíêöèè ğåàëèçóåòñÿ îñíîâíîé êîä
 void clientCode() {
 }
 
@@ -20,15 +20,15 @@ int main() {
 	setlocale(LC_ALL, "");
 
 	Chat chat;
-	int menu = 0;//ĞºĞ°ĞºĞ¾Ğµ Ğ¼ĞµĞ½Ñ Ğ¿ĞµÑ‡Ğ°Ñ‚Ğ°Ñ‚ÑŒ
+	int menu = 0;//êàêîå ìåíş ïå÷àòàòü
 	char choice = '0';
 
 	while (choice != 'q') {
 		if (choice == '0') {
 			choice = chat.showHelloMenu();
 		}
-		else if (choice == '1') {
-		
+		else if(choice == '1') {
+
 		}
 		else if (choice == '2') {
 			chat.showRegistrationMenu();
@@ -36,36 +36,28 @@ int main() {
 		}
 	}
 
-		//system("pause");
-		//system("cls");
-	/*
-			int operation;
-			char userdata;
-			std::cin >> operation;
-
-
-			switch (operation) {
-
-			case 1:
-				std::cout << "Enter your login" << std::endl;
-				std::cin >> userdata;
-				break;
-
-			case 2:
-
-				std::cout << "Enter your password" << std::endl;
-				std::cin >> userdata;
-				break;
-
-			case 0:
-				std::cout << "Bye!!!" << std::endl;
-				break;
-
-			default:
-				std::cout << "I don't know!" << std::endl;
-			}
-
-			*/
+	//system("pause");
+	//system("cls");
+/*
+		int operation;
+		char userdata;
+		std::cin >> operation;
+		switch (operation) {
+		case 1:
+			std::cout << "Enter your login" << std::endl;
+			std::cin >> userdata;
+			break;
+		case 2:
+			std::cout << "Enter your password" << std::endl;
+			std::cin >> userdata;
+			break;
+		case 0:
+			std::cout << "Bye!!!" << std::endl;
+			break;
+		default:
+			std::cout << "I don't know!" << std::endl;
+		}
+		*/
 
 	return 0;
 }

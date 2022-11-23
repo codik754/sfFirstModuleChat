@@ -1,12 +1,12 @@
-п»ї#pragma once
+#pragma once
 #include "iobserver.h"
 
-//РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РР·РґР°С‚РµР»СЏ
+//Интерфейс для Издателя
 class IPublisher {
 public:
-	virtual ~IPublisher() = default; //РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+	virtual ~IPublisher() = default; //деструктор класса
 
-	virtual void attach(IObserver* observer) = 0; //РґРѕР±Р°РІРёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РЅР° РїРѕРґРїРёСЃРєСѓ
-	virtual void dettach(IObserver* observer) = 0; //РёСЃРєР»СЋС‡РёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РёР· РїРѕРґРїРёСЃРєСѓ
-	virtual void notify() = 0; //СЂР°Р·РѕСЃР»Р°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ
+	virtual void attach(IObserver* observer) = 0; //добавить наблюдателя на подписку
+	virtual void dettach(IObserver* observer) = 0; //исключить наблюдателя из подписки
+	virtual void notify() = 0; //разослать информацию
 };

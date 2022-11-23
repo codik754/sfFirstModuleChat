@@ -1,32 +1,32 @@
-п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
+// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
-//Р¤Р°Р№Р» message.cpp
+//Файл message.cpp
 #include "message.h"
 
-//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+//Конструктор по умолчанию
 Message::Message() : sendedFrom_("UNKNOWN"), sendedTo_("UNKNOWN"), text_("UNKNOWN"), dateandtime_() {}
 
-//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+//Конструктор с параметрами
 Message::Message(const string& from, const string& to, const string& text) : sendedFrom_(from), sendedTo_(to), text_(text), dateandtime_() {}
 
-//РЈР·РЅР°С‚СЊ РѕС‚ РєРѕРіРѕ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
+//Узнать от кого отправлено сообщение
 const string& Message::getSendedFrom() const {
 	return sendedFrom_;
 }
 
-//РЈР·РЅР°С‚СЊ РєРѕРјСѓ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
+//Узнать кому отправлено сообщение
 const string& Message::getSendedTo() const {
 	return sendedTo_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ С‚РµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
+//Получить текст сообщения
 const string& Message::getText() const {
 	return text_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РґР°С‚Сѓ Рё РІСЂРµРјСЏ
+//Получить дату и время
 const string Message::getDatetime() const {
 	return dateandtime_.getStr();
 }

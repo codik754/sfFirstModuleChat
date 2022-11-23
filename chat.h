@@ -1,4 +1,4 @@
-п»ї#pragma once
+#pragma once
 #include "ipublisher.h"
 #include <vector>
 #include <list>
@@ -10,32 +10,32 @@
 using std::vector;
 using std::list;
 
-class Chat : public IPublisher{
-	vector<User> users_;   //РІРµРєС‚РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РІС€РёС…СЃСЏ РІ СЃРёСЃС‚РµРјРµ
-	vector<Message> message_;//РІРµРєС‚РѕСЂ СЃРѕРѕР±С‰РµРЅРёР№
-	list<IObserver*> subscribers_; //СЃРїРёСЃРѕРє РїРѕРґРїРёСЃС‡РёРєРѕРІ
-	unsigned int amount_;//РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№
-	HANDLE hConsole_;//РїРѕР»Рµ РЅСѓР¶РЅРѕ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ С†РІРµС‚РѕРј РІ РєРѕРЅСЃРѕР»Рµ Windows
+class Chat : public IPublisher {
+	vector<User> users_;   //вектор пользователей зарегестрировавшихся в системе
+	vector<Message> message_;//вектор сообщений
+	list<IObserver*> subscribers_; //список подписчиков
+	unsigned int amount_;//общее количество сообщений
+	HANDLE hConsole_;//поле нужно для работы с цветом в консоле Windows
 
 public:
-	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	//Конструктор по умолчанию
 	Chat() : users_(), message_(), subscribers_(), amount_(0), hConsole_(GetStdHandle(STD_OUTPUT_HANDLE)) {}
 
-	virtual ~Chat() = default;//РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+	virtual ~Chat() = default;//деструктор класса
 
-	void attach(IObserver* observer) override; //РґРѕР±Р°РІРёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РЅР° РїРѕРґРїРёСЃРєСѓ
-	void dettach(IObserver* observer) override; //РёСЃРєР»СЋС‡РёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РёР· РїРѕРґРїРёСЃРєСѓ
-	void notify() override; //СЂР°Р·РѕСЃР»Р°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ
+	void attach(IObserver* observer) override; //добавить наблюдателя на подписку
+	void dettach(IObserver* observer) override; //исключить наблюдателя из подписки
+	void notify() override; //разослать информацию
 
-	unsigned int getAmount() const;//РїРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№
+	unsigned int getAmount() const;//получить общее количество сообщений
 
-	unsigned int getAmountSelfMessage() const;//РїРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р»РёС‡РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+	unsigned int getAmountSelfMessage() const;//получить общее количество личных сообщений для пользователя
 
-	char showHelloMenu();//РїРѕРєР°Р·Р°С‚СЊ РїРµСЂРІРѕРµ РјРµРЅСЋ
-	
-	void showRegistrationMenu();//РїРѕРєР°С‰Р°С‚СЊ РјРµРЅСЋ СЂРµРіРёСЃС‚СЂР°С†РёРё
+	char showHelloMenu();//показать первое меню
 
-	
+	void showRegistrationMenu();//показать меню регистрации
+
+
 
 };
 

@@ -1,30 +1,19 @@
-п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
+// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
-//Р¤Р°Р№Р» datetime.cpp
+//Файл datetime.cpp
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "datetime.h"
+#include "chat.h"
 #include <ctime>
 #include <sstream>
 
-//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
-Datetime::Datetime(){
-    std::time_t t = std::time(nullptr);
-    std::tm *now = localtime(&t);
-
-    sec_ = now->tm_sec;
-    min_ = now->tm_min;
-    hour_ = now->tm_hour;
-    day_ = now->tm_mday;
-    month_ = now->tm_mon + 1;
-    year_ = now->tm_year + 1900;
-}
-
-
-//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ С‚РµРєСѓС‰РёРµ РІСЂРµРјСЏ
-void Datetime::setNow(){
+//Подсветка времени
+//SetConsoleTextAttribute(hConsole_, 15);
+//Конструктор по умолчанию
+Datetime::Datetime() {
     std::time_t t = std::time(nullptr);
     std::tm* now = localtime(&t);
 
@@ -36,37 +25,51 @@ void Datetime::setNow(){
     year_ = now->tm_year + 1900;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ СЃРµРєСѓРЅРґС‹
+
+//Установить текущие время
+void Datetime::setNow() {
+    std::time_t t = std::time(nullptr);
+    std::tm* now = localtime(&t);
+
+    sec_ = now->tm_sec;
+    min_ = now->tm_min;
+    hour_ = now->tm_hour;
+    day_ = now->tm_mday;
+    month_ = now->tm_mon + 1;
+    year_ = now->tm_year + 1900;
+}
+
+//Получить секунды
 int Datetime::getSec() const {
     return sec_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РјРёРЅСѓС‚С‹
+//Получить минуты
 int Datetime::getMin() const {
     return min_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ С‡Р°СЃС‹
+//Получить часы
 int Datetime::getHour() const {
     return hour_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РґРµРЅСЊ
+//Получить день
 int Datetime::getDay() const {
     return day_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РјРµСЃСЏС†
+//Получить месяц
 int Datetime::getMonth() const {
     return month_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РіРѕРґ
+//Получить год
 int Datetime::getYear() const {
     return year_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РґР°С‚Сѓ Рё РІСЂРµРјСЏ РІ РІРёРґРµ СЃС‚СЂРѕРєРё
+//Получить дату и время в виде строки
 const string Datetime::getStr() const {
     std::ostringstream os;
     os << day_ << "." << month_ << "." << year_ << "  " << hour_ << ":" << min_ << ":" << sec_;

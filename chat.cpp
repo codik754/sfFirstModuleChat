@@ -1,4 +1,4 @@
-п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
+// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
@@ -10,75 +10,111 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-//Р”РѕР±Р°РІРёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РЅР° РїРѕРґРїРёСЃРєСѓ
+//Добавить наблюдателя на подписку
 void Chat::attach(IObserver* observer) {
 
-} 
+}
 
-//РСЃРєР»СЋС‡РёС‚СЊ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ РёР· РїРѕРґРїРёСЃРєСѓ
+//Исключить наблюдателя из подписки
 void Chat::dettach(IObserver* observer) {
 
 }
 
-//Р Р°Р·РѕСЃР»Р°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ
+//Разослать информацию
 void Chat::notify() {
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№
+//Получить общее количество сообщений
 unsigned int Chat::getAmount() const {
     return 0;
 }
 
-//РџРѕРєР°Р·Р°С‚СЊ РїРµСЂРІРѕРµ РјРµРЅСЋ
+//Показать первое меню
 char Chat::showHelloMenu() {
-   SetConsoleTextAttribute(hConsole_, 224);
+    SetConsoleTextAttribute(hConsole_, 10);
     char choice = '0';
     while (true) {
-        cout << "Р”РѕР±СЂС‹Р№ РґРµРЅСЊ! Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ С‡Р°С‚. Р§С‚Рѕ Р±СѓРґРµРј РґРµР»Р°С‚СЊ?" << endl;
-        cout << "1. Р’РѕР№С‚Рё" << endl;
-        cout << "2. Р РµРіРёСЃС‚СЂР°С†РёСЏ" << endl;
-        cout << "q - Р’С‹С…РѕРґ" << endl;
-        cout << "Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР»: ";     
+        cout << "Добрый день! Добро пожаловать в чат. Что будем делать?" << endl;
+        SetConsoleTextAttribute(hConsole_, 176);
+        cout << "1. Войти" << endl;
+        cout << "2. Регистрация" << endl;
+        cout << "q - Выход" << endl;
+        SetConsoleTextAttribute(hConsole_, 15);
+        cout << "Введите символ: ";
         cin >> choice;
         if (choice == '1' || choice == '2' || choice == 'q') {
             break;
         }
         else {
             system("cls");
-            cout << "РљРѕРјР°РЅРґС‹ " << choice << " РЅРµ Р·РЅР°СЋ!!!" << endl;
+            cout << "Команды " << choice << " не знаю!!!" << endl;
             system("pause");
             system("cls");
         }
     }
-   SetConsoleTextAttribute(hConsole_, 15);
+    SetConsoleTextAttribute(hConsole_, 15);
     system("cls");
     return choice;
 }
+/*#include <conio.h>
+#include <string>
+#include <iostream>
+#include <vector>
 
-//РџРѕРєР°С‰Р°С‚СЊ РјРµРЅСЋ СЂРµРіРёСЃС‚СЂР°С†РёРё
+void sign_in()
+{
+    std::string       login;
+    std::vector<char> password;
+
+    char c;
+
+    std::cout << "Enter login: ";
+    std::cin >> login;
+    std::cout << "Enter password: ";
+    while ((c = _getch()) != '\r')
+    {
+        password.push_back(c);
+        _putch('*');
+    }
+
+    std::cout << std::endl << login << " : ";
+
+    for (std::size_t i = 0; i < password.size(); ++i)
+        std::cout << password[i];
+    std::cout << std::endl;
+}
+
+int main(int argc, char* argv[])
+{
+    sign_in();
+
+    return 0;
+}
+*/
+//Показать меню регистрации
 void Chat::showRegistrationMenu() {
     string tname;
     string tpassword;
     string tlogin;
     while (true) {
-        cout << "Р’РІРµРґРёС‚Рµ СЂРµРіРёСЃС‚СЂР°С†РёРѕРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ" << endl;
-        cout << "РРјСЏ: ";
+        cout << "Введите регистрационные данные" << endl;
+        cout << "Имя: ";
         cin >> tname;
-        cout << "Р›РѕРіРёРЅ: ";
+        cout << "Логин: ";
         cin >> tlogin;
-        cout << "РџР°СЂРѕР»СЊ: ";
+        cout << "Пароль: ";
         cin >> tpassword;
         break;
     }
 
     system("cls");
-    cout << "Р’С‹ Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РЅС‹! " << endl;
+    cout << "Вы зарегестрированы! " << endl;
     cout << tname << " " << tlogin << " " << tpassword << endl;
     system("pause");
     system("cls");
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р»РёС‡РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+//Получить общее количество личных сообщений для пользователя
 unsigned int Chat::getAmountSelfMessage() const {
-    return 0;
+    return amount_;
 }

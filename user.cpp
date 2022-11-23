@@ -1,35 +1,35 @@
-п»ї// This is a personal academic project. Dear PVS-Studio, please check it.
+// This is a personal academic project. Dear PVS-Studio, please check it.
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
 #include "user.h"
 
-//РџРѕР»СѓС‡РёС‚СЊ Р»РѕРіРёРЅ
+//Получить логин
 const std::string& User::getLogin() const {
-	return login_; 
+	return login_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РёРјСЏ
-const std::string& User::getName() const { 
-	return name_; 
+//Получить имя
+const std::string& User::getName() const {
+	return name_;
 }
 
-//РџРѕР»СѓС‡РёС‚СЊ РїР°СЂРѕР»СЊ
-const std::string& User::getPassword() const { 
-	return password_; 
+//Получить пароль
+const std::string& User::getPassword() const {
+	return password_;
 }
 
-//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РїР°СЂРѕР»СЊ
-void User::setPassword(const std::string& password) { 
-	password_ = password; 
+//Установить пароль
+void User::setPassword(const std::string& password) {
+	password_ = password;
 }
 
-//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РёРјСЏ
-void User::setName(const std::string& name) { 
-	name_ = name; 
+//Установить имя
+void User::setName(const std::string& name) {
+	name_ = name;
 }
 
-//РѕР±РЅРѕРІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕР»СѓС‡РµРЅРЅСѓСЋ РѕС‚ РР·РґР°С‚РµР»СЏ
+//обновить информацию полученную от Издателя
 void User::updateInformation() {
 
 }
