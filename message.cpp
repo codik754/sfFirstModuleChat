@@ -4,6 +4,11 @@
 
 //Файл message.cpp
 #include "message.h"
+#include"chat.h"
+#include<iostream>
+using std::cout;
+using std::endl;
+using std::cin;
 
 //Конструктор по умолчанию
 Message::Message() : sendedFrom_("UNKNOWN"), sendedTo_("UNKNOWN"), text_("UNKNOWN"), dateandtime_() {}
@@ -18,6 +23,13 @@ const string& Message::getSendedFrom() const {
 
 //Узнать кому отправлено сообщение
 const string& Message::getSendedTo() const {
+	std::string& observer();
+	if (observer != 0) {
+		cout << "Сообщение отправлено" << endl;
+	}
+	else {
+		cout << "Упс, такого абонента не существует" << endl;
+	}
 	return sendedTo_;
 }
 

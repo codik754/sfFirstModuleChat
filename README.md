@@ -10,6 +10,6 @@ Chat for first module
 <button name="Логин" value="Логин">
 
 <button name="nubex" value="Nubex">
-<img style="vertical-align: middle; width: 32px;" src="http://nubex.ru/files/siroezhkin/icon.png" alt="" />
+<img style="vertical-align: middle; width: 64px;" src="http://nubex.ru/files/siroezhkin/icon.png" alt="" />
 Проект "Module1"
 </button>
