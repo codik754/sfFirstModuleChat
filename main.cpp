@@ -20,44 +20,28 @@ int main() {
 	setlocale(LC_ALL, "");
 
 	Chat chat;
-	int menu = 0;//какое меню печатать
-	char choice = '0';
+	char choice = '0';//Функция для выбора
 
 	while (choice != 'q') {
 		if (choice == '0') {
 			choice = chat.showHelloMenu();
 		}
 		else if(choice == '1') {
-
+			chat.showLogIn();
+			choice = '0';
 		}
 		else if (choice == '2') {
 			chat.showRegistrationMenu();
 			choice = '0';
 		}
-	}
-
-	//system("pause");
-	//system("cls");
-/*
-		int operation;
-		char userdata;
-		std::cin >> operation;
-		switch (operation) {
-		case 1:
-			std::cout << "Enter your login" << std::endl;
-			std::cin >> userdata;
-			break;
-		case 2:
-			std::cout << "Enter your password" << std::endl;
-			std::cin >> userdata;
-			break;
-		case 0:
-			std::cout << "Bye!!!" << std::endl;
-			break;
-		default:
-			std::cout << "I don't know!" << std::endl;
+		
+		if (choice == 'q') {
+			chat.setColorToConsole(12);
+			cout << "До встречи!!!" << endl;
+			chat.setColorToConsole(15);
 		}
-		*/
+
+	}
 
 	return 0;
 }
