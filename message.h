@@ -15,6 +15,10 @@ public:
 	Message();
 	//Конструктор с параметрами
 	Message(const string& from, const string& to, const string& text);
+	//Конструктор копирования
+	Message(const Message& other);
+
+	//Операт присвоения
 
 	//Узнать от кого отправлено сообщение
 	const string& getSendedFrom() const;
@@ -24,4 +28,6 @@ public:
 	const string& getText() const;
 	//Получить дату и время
 	const string getDatetime() const;
+	//Соответсвует ли поле кому отправлено сообщение переданной строке
+	bool checkToSendedTo(const string &login) const;
 };

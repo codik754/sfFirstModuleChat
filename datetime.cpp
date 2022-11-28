@@ -70,8 +70,22 @@ int Datetime::getYear() const {
 }
 
 //Получить дату и время в виде строки
-const string Datetime::getStr() const {
+const string Datetime::getStrAll() const {
     std::ostringstream os;
     os << day_ << "." << month_ << "." << year_ << "  " << hour_ << ":" << min_ << ":" << sec_;
+    return os.str();
+}
+
+//Получить дату в виде строки
+const string Datetime::getStrDate() const {
+    std::ostringstream os;
+    os << day_ << "." << month_ << "." << year_;
+    return os.str();
+}
+
+//Получить время в виде строки
+const string Datetime::getStrTime() const {
+    std::ostringstream os;
+    os << hour_ << ":" << min_ << ":" << sec_;
     return os.str();
 }

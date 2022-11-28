@@ -33,6 +33,10 @@ public:
 	//Получить год
 	int getYear() const;
 	//Получить дату и время в виде строки
-	const string getStr() const;
+	const string getStrAll() const;
+	//Получить дату в виде строки
+	const string getStrDate() const;
+	//Получить время в виде строки
+	const string getStrTime() const;
 };
 
