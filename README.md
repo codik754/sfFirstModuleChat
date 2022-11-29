@@ -13,3 +13,7 @@ Chat for first module
 <img style="vertical-align: middle; width: 64px;" src="http://nubex.ru/files/siroezhkin/icon.png" alt="" />
 Проект "Module1"
 </button>
+
+1. Команда проекта: Иван Беспалов, Роман Лигостаев
+2. Teamlead проекта: Иван Беспалов
+3.
