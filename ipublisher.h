@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿//Файл ipublisher.h
+#pragma once
 #include "iobserver.h"
 
 //Интерфейс для Издателя

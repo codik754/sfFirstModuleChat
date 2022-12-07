@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿//Файл user.h
+#pragma once
 #include <iostream>
 #include <string>
 #include <memory>
@@ -28,11 +29,7 @@ public:
 		: login_(login), password_(password), name_(name), amountSelfMessages_(0), newSelfMessages_(0), newAllMessages_(0), isSubribes_(false), publisher_(publisher) {}
 
 	const std::string& getLogin() const;//получить логин
-	const std::string& getName() const;//получить имя
-	const std::string& getPassword() const;//получить пароль
 
-	void setPassword(const std::string& password);//установить пароль
-	void setName(const std::string& name);//установить имя
 
 	//Получить статус подписки
 	bool getIsSubscribes() const;
