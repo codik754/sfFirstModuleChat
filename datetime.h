@@ -16,22 +16,17 @@ public:
 	
 	//Конструктор по умолчанию
 	Datetime();
+	//Конструктор копирования
+	Datetime(const Datetime &other);
+	//Деструктор
+	~Datetime() = default;
+
+	//Оператор присваивания
+	const Datetime& operator = (const Datetime& other);
 
 	//Установить текущие время
 	void setNow();
 
-	//Получить секунды
-	int getSec() const;
-	//Получить минуты
-	int getMin() const;
-	//Получить часы
-	int getHour() const;
-	//Получить день
-	int getDay() const;
-	//Получить месяц
-	int getMonth() const;
-	//Получить год
-	int getYear() const;
 	//Получить дату и время в виде строки
 	const string getStrAll() const;
 	//Получить дату в виде строки
