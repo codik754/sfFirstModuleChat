@@ -12,6 +12,7 @@ using std::vector;
 using std::list;
 using std::unique_ptr;
 
+//Класс для чата
 class Chat : public IPublisher {
 	vector<User> users_;   //вектор пользователей зарегестрировавшихся в системе
 	vector<Message> message_;//вектор сообщений
@@ -25,7 +26,7 @@ public:
 	Chat() : users_(), message_(), subscribers_(), amountAll_(0), hConsole_(GetStdHandle(STD_OUTPUT_HANDLE)), currentUser(nullptr) {
 		//Создаем пользователя и добавляем в вектор
 		users_.reserve(100);//резервируем место для вектора
-		users_.emplace_back(User("admin", "a123", "ADMIN", this));
+		users_.emplace_back(User("admin", "a123", "ADMIN", std::make_unique<IPublisher*>(this)));
 	}
 
 	virtual ~Chat() = default;//деструктор класса

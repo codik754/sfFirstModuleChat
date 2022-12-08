@@ -9,8 +9,8 @@
 using std::string;
 using std::shared_ptr;
 
+//Класс для пользователя
 class User : public IObserver {
-
 	const std::string login_;//поле для логина
 	std::string password_;//поле для пароля
 	std::string name_;//поле для имени
@@ -18,18 +18,15 @@ class User : public IObserver {
 	unsigned int newSelfMessages_;  //количество новых непрочитыннах личных сообщений
 	unsigned int newAllMessages_; //количество новых непрочитанных сообщений в общем чате
 	bool isSubribes_; //пользователь подписан на оповещения
-	IPublisher* publisher_; //указатель на издателя
-
-
+	shared_ptr<IPublisher*> publisher_; //указатель на издателя
 public:
 	//Конструктор по умолчанию
 	User() : login_("UNKNOWN"), password_("UNKNOWN"), name_("UNKNOWN"), amountSelfMessages_(0), newSelfMessages_(0), newAllMessages_(0), isSubribes_(false), publisher_(nullptr) {}
 	//Параметризированный конструктор
-	User(const std::string& login, const std::string& password, const std::string& name, IPublisher* publisher)
+	User(const std::string& login, const std::string& password, const std::string& name, shared_ptr<IPublisher*> publisher)
 		: login_(login), password_(password), name_(name), amountSelfMessages_(0), newSelfMessages_(0), newAllMessages_(0), isSubribes_(false), publisher_(publisher) {}
 
 	const std::string& getLogin() const;//получить логин
-
 
 	//Получить статус подписки
 	bool getIsSubscribes() const;
@@ -60,7 +57,4 @@ public:
 
 	//Установить значение для amountSelfMessages_
 	void setAmountSelfMessages(unsigned int n);
-
 };
-
-

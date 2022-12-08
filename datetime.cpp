@@ -7,8 +7,6 @@
 
 //Конструктор по умолчанию
 Datetime::Datetime() {
- 
-
     std::time_t t = std::time(nullptr);
     std::tm now;
     localtime_s(&now, &t);
@@ -46,10 +44,8 @@ const Datetime& Datetime::operator = (const Datetime &other) {
     return *this;
 }
 
-
 //Установить текущие время
 void Datetime::setNow() {
-
     std::time_t t = std::time(nullptr);
     std::tm now;
     localtime_s(&now, &t);
