@@ -1,27 +1,35 @@
-//Файл message.h
+п»ї//Р¤Р°Р№Р» message.h
 #pragma once
 #include <string>
 #include "datetime.h"
 
 using std::string;
 
+//РљР»Р°СЃСЃ РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№
 class Message {
-	const string sendedFrom_;//от кого отправлено сообщение
-	const string sendedTo_;  //кому отправлено сообщение
-	const string text_;	//текст сообщения
-	const Datetime dateandtime_; //дата отправки сообщения
+	const string sendedFrom_;//РѕС‚ РєРѕРіРѕ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
+	const string sendedTo_;  //РєРѕРјСѓ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
+	const string text_;	//С‚РµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
+	const Datetime dateandtime_; //РґР°С‚Р° РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ
 public:
-	//Конструктор по умолчанию
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Message();
-	//Конструктор с параметрами
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Message(const string& from, const string& to, const string& text);
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Message(const Message& other);
+	//Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
+	~Message() = default;
+	
+	//РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+	const Message& operator = (const Message& other);
 
-	//Узнать от кого отправлено сообщение
+	//РЈР·РЅР°С‚СЊ РѕС‚ РєРѕРіРѕ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
 	const string& getSendedFrom() const;
-	//Узнать кому отправлено сообщение
-	const string& getSendedTo() const;
-	//Получить текст сообщения
+	//РџРѕР»СѓС‡РёС‚СЊ С‚РµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
 	const string& getText() const;
-	//Получить дату и время
+	//РџРѕР»СѓС‡РёС‚СЊ РґР°С‚Сѓ Рё РІСЂРµРјСЏ
 	const string getDatetime() const;
+	//РЎРѕРѕС‚РІРµС‚СЃРІСѓРµС‚ Р»Рё РїРѕР»Рµ РєРѕРјСѓ РѕС‚РїСЂР°РІР»РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ РїРµСЂРµРґР°РЅРЅРѕР№ СЃС‚СЂРѕРєРµ
+	bool checkToSendedTo(const string &login) const;
 };

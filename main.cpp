@@ -1,9 +1,5 @@
-﻿// This is a personal academic project. Dear PVS-Studio, please check it.
-
-// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
-
+﻿//Файл main.cpp
 #include <iostream>
-#include <memory>
 #include "chat.h"
 #include "user.h"
 
@@ -13,51 +9,39 @@ using std::cin;
 
 //В этой функции реализуется основной код
 void clientCode() {
+	Chat chat;//создаем объект для чата
+	char choice = '0';//переменная для выбора
+
+	while (choice != 'q') {
+		if (choice == '0'){
+			//Показываем основное первое меню
+			choice = chat.showHelloMenu();
+		}
+		else if (choice == '1') {
+			//Показываем меню для входа
+			chat.showLogIn();
+			choice = '0';
+		}
+		else if (choice == '2') {
+			//Показываем меню для регистрации
+			chat.showRegistrationMenu();
+			choice = '0';
+		}
+
+		if (choice == 'q') {
+			//Выводим сообщение, показываемое перед выходом
+			chat.setColorToConsole(12);
+			cout << "До встречи!!!" << endl;
+			chat.setColorToConsole(15);
+		}
+
+	}
 }
 
 
 int main() {
 	setlocale(LC_ALL, "");
-
-	Chat chat;
-	int menu = 0;//какое меню печатать
-	char choice = '0';
-
-	while (choice != 'q') {
-		if (choice == '0') {
-			choice = chat.showHelloMenu();
-		}
-		else if(choice == '1') {
-
-		}
-		else if (choice == '2') {
-			chat.showRegistrationMenu();
-			choice = '0';
-		}
-	}
-
-	//system("pause");
-	//system("cls");
-/*
-		int operation;
-		char userdata;
-		std::cin >> operation;
-		switch (operation) {
-		case 1:
-			std::cout << "Enter your login" << std::endl;
-			std::cin >> userdata;
-			break;
-		case 2:
-			std::cout << "Enter your password" << std::endl;
-			std::cin >> userdata;
-			break;
-		case 0:
-			std::cout << "Bye!!!" << std::endl;
-			break;
-		default:
-			std::cout << "I don't know!" << std::endl;
-		}
-		*/
-
+	//Запускаем основной код
+	clientCode();
 	return 0;
 }

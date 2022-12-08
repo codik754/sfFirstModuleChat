@@ -4,6 +4,8 @@
 #include <string>
 
 using std::string;
+
+//Класс для даты и времени
 class Datetime
 {
 	int sec_;  //секунды
@@ -16,23 +18,22 @@ public:
 	
 	//Конструктор по умолчанию
 	Datetime();
+	//Конструктор копирования
+	Datetime(const Datetime &other);
+	//Деструктор
+	~Datetime() = default;
 
-	//Установить текущие время
+	//Оператор присваивания
+	const Datetime& operator = (const Datetime& other);
+
+	//Установить текущие время и дату
 	void setNow();
 
-	//Получить секунды
-	int getSec() const;
-	//Получить минуты
-	int getMin() const;
-	//Получить часы
-	int getHour() const;
-	//Получить день
-	int getDay() const;
-	//Получить месяц
-	int getMonth() const;
-	//Получить год
-	int getYear() const;
 	//Получить дату и время в виде строки
-	const string getStr() const;
+	const string getStrAll() const;
+	//Получить дату в виде строки
+	const string getStrDate() const;
+	//Получить время в виде строки
+	const string getStrTime() const;
 };
 
