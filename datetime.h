@@ -4,6 +4,8 @@
 #include <string>
 
 using std::string;
+
+//Класс для даты и времени
 class Datetime
 {
 	int sec_;  //секунды
@@ -24,7 +26,7 @@ public:
 	//Оператор присваивания
 	const Datetime& operator = (const Datetime& other);
 
-	//Установить текущие время
+	//Установить текущие время и дату
 	void setNow();
 
 	//Получить дату и время в виде строки

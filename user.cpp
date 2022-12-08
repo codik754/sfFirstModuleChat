@@ -6,8 +6,6 @@ const std::string& User::getLogin() const {
 	return login_;
 }
 
-
-
 //Обновить информацию полученную от Издателя про общий чат
 void User::updateInformationAll() {
 	++newAllMessages_;
@@ -30,16 +28,15 @@ bool User::isThisI(const string& str) {
 
 //Подписаться на уведомления
 void User::subscribe() {
-	publisher_->attach(this);
+	(*publisher_)->attach(this);
 	isSubribes_ = true;
 }
 
 //Отписаться от уведомления
 void User::unscribe() {
-	publisher_->dettach(this);
+	(*publisher_)->dettach(this);
 	isSubribes_ = false;
 }
-
 
 //Проверка логина
 bool User::checkLogin(const string& login) const {

@@ -107,6 +107,7 @@ void Chat::showRegistrationMenu() {
                 setColorToConsole(15);
                 system("pause");
                 system("cls");
+                return;
             }
             else {
                 break;
@@ -115,11 +116,10 @@ void Chat::showRegistrationMenu() {
         setColorToConsole(15);
 
         //Создаем пользователя и добавляем в вектор
-        users_.emplace_back(User(tlogin, tpassword, tname, this));
+        users_.emplace_back(User(tlogin, tpassword, tname, std::make_shared<IPublisher*>(this)));
         
         //Подписываем последнего добавленного пользователя на уведомления
         users_[users_.size() - 1].subscribe();
-
 
         //Отправляем пользователю личное сообщения от администратора
         addMessage("admin", tlogin, "Welcome to the chat! We are glad to see you here. Make yourself at home!");

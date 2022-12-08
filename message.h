@@ -5,6 +5,7 @@
 
 using std::string;
 
+//Класс для сообщений
 class Message {
 	const string sendedFrom_;//от кого отправлено сообщение
 	const string sendedTo_;  //кому отправлено сообщение
