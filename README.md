@@ -41,67 +41,67 @@
 
 **Методы класса IObserver:**
 
-* void updateInformationAll() - обновить информацию полученную от Издателя про общий чат
-* void updateInformationSelf() - обновить информацию полученную от Издателя про личные сообщения
-* bool isThisI(const string& str) - метод для сравнения какого-либо поля с переданным значением
+* <b><i>void updateInformationAll()</i></b> - обновить информацию полученную от Издателя про общий чат
+* <b><i>void updateInformationSelf()</i></b> - обновить информацию полученную от Издателя про личные сообщения
+* <b><i>bool isThisI(const string& str)</i></b> - метод для сравнения какого-либо поля с переданным значением
 
 
 **Методы класса IPublisher:**
 
-* void attach(IObserver* observer) - добавить наблюдателя на подписку
-* void dettach(IObserver* observer) - исключить наблюдателя из подписки
-* void notifyAboutAll() - разослать информацию про общий чат
-* void notifyAboutSelf(const string& login) - проинформировать про личное сообщение
+* <b><i>void attach(IObserver* observer)</i></b> - добавить наблюдателя на подписку
+* <b><i>void dettach(IObserver* observer)</i></b> - исключить наблюдателя из подписки
+* <b><i>void notifyAboutAll()</i></b> - разослать информацию про общий чат
+* <b><i>void notifyAboutSelf(const string& login)</i></b> - проинформировать про личное сообщение
 
 
 **Методы класса Chat:**
 
-* void attach(IObserver* observer) - добавить наблюдателя на подписку. Метод унаследован от IPublisher.
-* void dettach(IObserver* observer) override - исключить наблюдателя из подписки. Метод унаследован от IPublisher.
-* void notifyAboutAll() - разослать информацию про общий чат. Метод унаследован от IPublisher.
-* void notifyAboutSelf(const string& login) - проинформировать про личное сообщение. Метод унаследован от IPublisher.
-* unsigned int getAmountSelfMessage(const string &login) - получить общее количество личных сообщений для пользователя
-* char showHelloMenu() - показать первое меню
-* void showRegistrationMenu() - показать меню регистрации
-* void showLogIn() - показать меню для входа
-* void showChatMenu() - показать меню общего чата
-* void showWriteMessageMenu() - показать меню для написания сообщений
-* void setColorToConsole(WORD n) - установить цвет в консоле
-* unique_ptr<User*> getUser(const string &login, const string &password) - получить пользователя с определенным логином и паролем
-* bool checkLogin(const string& login) - проверка существует ли пользователь с таким логином
-* void addMessage(const string& from, const string &to, const string& text) - добавить сообщение
+* <b><i>void attach(IObserver* observer)</i></b> - добавить наблюдателя на подписку. Метод унаследован от IPublisher.
+* <b><i>void dettach(IObserver* observer) override</i></b> - исключить наблюдателя из подписки. Метод унаследован от IPublisher.
+* <b><i>void notifyAboutAll()</i></b> - разослать информацию про общий чат. Метод унаследован от IPublisher.
+* <b><i>void notifyAboutSelf(const string& login)</i></b> - проинформировать про личное сообщение. Метод унаследован от IPublisher.
+* <b><i>unsigned int getAmountSelfMessage(const string &login)</i></b> - получить общее количество личных сообщений для пользователя
+* <b><i>char showHelloMenu()</i></b> - показать первое меню
+* <b><i>void showRegistrationMenu()</i></b> - показать меню регистрации
+* <b><i>void showLogIn()</i></b> - показать меню для входа
+* <b><i>void showChatMenu()</i></b> - показать меню общего чата
+* <b><i>void showWriteMessageMenu()</i></b> - показать меню для написания сообщений
+* <b><i>void setColorToConsole(WORD n)</i></b> - установить цвет в консоле
+* <b><i>unique_ptr<User*> getUser(const string &login, const string &password)</i></b> - получить пользователя с определенным логином и паролем
+* <b><i>bool checkLogin(const string& login)</i></b> - проверка существует ли пользователь с таким логином
+* <b><i>void addMessage(const string& from, const string &to, const string& text)</i></b> - добавить сообщение
 
 
 **Методы класса User:**
 
-* bool getIsSubscribes() const - получить статус подписки 
-* unsigned int getAmountSelfMessages() - получить количество личных сообщений
-* unsigned int getNewSelfMessages() - получить количество новых непрочитыннах личных сообщений
-* unsigned int getNewAllMessages() - получить количество новых непрочитанных сообщений в общем чате
+* <b><i>bool getIsSubscribes() const</i></b> - получить статус подписки 
+* <b><i>unsigned int getAmountSelfMessages()</i></b> - получить количество личных сообщений
+* <b><i>unsigned int getNewSelfMessages()</i></b> - получить количество новых непрочитыннах личных сообщений
+* <b><i>unsigned int getNewAllMessages()</i></b> - получить количество новых непрочитанных сообщений в общем чате
 
-* void updateInformationAll() - обновить информацию полученную от Издателя про общий чат. Метод унаследован от IObserver.
-* void updateInformationSelf() - обновить информацию полученную от Издателя про личные сообщения. Метод унаследован от IObserver.
-* bool isThisI(const string& str) - метод для сравнения поля логин с переданным значением. Метод унаследован от IObserver.
-* void subscribe() - подписаться на рассылку
-* void unscribe() - отписаться от рассылки
-* bool checkLogin(const string &login) - проверка логина
-* bool checkPassword(const string& password) - проверка пароля
-* void resetNewAllMessages() - сбросить количество непрочитанных сообщений в общем чате в 0
-* void resetNewSelfMessages() - сбросить количество непрочитанных сообщений в личных сообщениях в 0
-* void setAmountSelfMessages(unsigned int n) - Установить значение для amountSelfMessages_
+* <b><i>void updateInformationAll()</i></b> - обновить информацию полученную от Издателя про общий чат. Метод унаследован от IObserver.
+* <b><i>void updateInformationSelf()</i></b> - обновить информацию полученную от Издателя про личные сообщения. Метод унаследован от IObserver.
+* <b><i>bool isThisI(const string& str)</i></b> - метод для сравнения поля логин с переданным значением. Метод унаследован от IObserver.
+* <b><i>void subscribe()</i></b> - подписаться на рассылку
+* <b><i>void unscribe()</i></b> - отписаться от рассылки
+* <b><i>bool checkLogin(const string &login)</i></b> - проверка логина
+* <b><i>bool checkPassword(const string& password)</i></b> - проверка пароля
+* <b><i>void resetNewAllMessages()</i></b> - сбросить количество непрочитанных сообщений в общем чате в 0
+* <b><i>void resetNewSelfMessages()</i></b> - сбросить количество непрочитанных сообщений в личных сообщениях в 0
+* <b><i>void setAmountSelfMessages(unsigned int n)</i></b> - Установить значение для amountSelfMessages_
 
 
 **Методы класса Message:**
 
-* const string& getSendedFrom() - узнать от кого отправлено сообщение
-* const string& getText() - получить текст сообщения
-* const string getDatetime() - получить дату и время
-* bool checkToSendedTo(const string &login) - соответсвует ли поле кому отправлено сообщение переданной строке
+* <b><i>const string& getSendedFrom()</i></b> - узнать от кого отправлено сообщение
+* <b><i>const string& getText()</i></b> - получить текст сообщения
+* <b><i>сonst string getDatetime()</i></b> - получить дату и время
+* <b><i>bool checkToSendedTo(const string &login)</i></b> - соответсвует ли поле кому отправлено сообщение переданной строке
 
 
 **Методы класса Datetime:**
 
-* void setNow() - установить текущие время и дату
-* const string getStrAll() - получить дату и время в виде строки
-* const string getStrDate() - получить дату в виде строки
-* const string getStrTime() - получить время в виде строки
+* <b><i>void setNow()</i></b> - установить текущие время и дату
+* <b><i>const string getStrAll()</i></b> - получить дату и время в виде строки
+* <b><i>const string getStrDate()</i></b> - получить дату в виде строки
+* <b><i>const string getStrTime()</i></b> - получить время в виде строки
